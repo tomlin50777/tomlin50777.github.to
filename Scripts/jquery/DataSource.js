@@ -21,8 +21,8 @@ var noteItem = [
     { text: "shipment" }
 ];
 var kanBanItem = [
-    { text: "Data" },
-    { text: "Box" }
+    { text: 'Sample Data', url: 'View/KanBan/data.html' },
+    { text: 'Box' }
 ];
 var musicItem = [
     { text: "Show" },
@@ -30,6 +30,6 @@ var musicItem = [
 ];
 
 var menuTabPanelItem = [
-    { ID: 1, title: 'Note', item: kanBanItem },
-    { ID: 2, title: 'KanBan', item: noteItem },
+    { ID: 1, title: 'Note', item: noteItem },
+    { ID: 2, title: 'KanBan', item: kanBanItem },
 ];

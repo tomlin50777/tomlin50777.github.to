@@ -1,17 +1,21 @@
 $(function () {
-    $('#menuTab').dxTabs({
-        dataSource: menuTabItem
+    $("#menuTabPanel").dxTabPanel({
+        dataSource: menuTabPanelItem,
+        itemTitleTemplate: function (itemData, itemIndex, itemElement) {
+            itemElement
+                .append($("<span>").text(itemData.title));
+        },
+        itemTemplate: function (itemData, itemIndex, itemElement) {
+            var item = $("<div>").append('<div id="TabPanelItem_' + itemData.title + '"></div>').appendTo(itemElement);
+            $('#TabPanelItem_' + itemData.title).dxTabs({
+                dataSource: itemData.item,
+                onItemClick: function (e) {
+                    $('#Content').load(e.itemData.url);
+                }
+            });
+        },
+        deferRendering: false,
+        showNavButtons: true,
+        repaintChangesOnly: true
     });
-
-
-    //var tabPanel = $("#menuTabPanel").dxTabPanel({
-    //    dataSource: employees.slice(0, 3),
-    //    itemTitleTemplate: titleTemplate,
-    //    itemTemplate: itemTemplate,
-    //    height: 410,
-    //    deferRendering: false,
-    //    showNavButtons: true,
-    //    repaintChangesOnly: true
-    //}).dxTabPanel("instance");
-    $('#Content').load('View/KanBan/data.html');
 });
