@@ -4,14 +4,14 @@ $(function () {
     });
 
 
-    var tabPanel = $("#menuTabPanel").dxTabPanel({
-        dataSource: employees.slice(0, 3),
-        itemTitleTemplate: titleTemplate,
-        itemTemplate: itemTemplate,
-        height: 410,
-        deferRendering: false,
-        showNavButtons: true,
-        repaintChangesOnly: true
-    }).dxTabPanel("instance");
-    $('@#ontent').load('View/KanBan/data.html');
+    //var tabPanel = $("#menuTabPanel").dxTabPanel({
+    //    dataSource: employees.slice(0, 3),
+    //    itemTitleTemplate: titleTemplate,
+    //    itemTemplate: itemTemplate,
+    //    height: 410,
+    //    deferRendering: false,
+    //    showNavButtons: true,
+    //    repaintChangesOnly: true
+    //}).dxTabPanel("instance");
+    $('#Content').load('View/KanBan/data.html');
 });
