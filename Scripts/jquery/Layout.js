@@ -11,8 +11,9 @@ $(function () {
             $('#TabPanelItem_' + itemData.title).dxTabs({
                 dataSource: itemData.item,
                 onItemClick: function (e) {
-                    $('#Content').load(e.itemData.url);
-                    e.itemData.bulidFunction();
+                    $('#Content').load(e.itemData.url, function() {
+                        e.itemData.bulidFunction();
+                    });
                 }
             });
         },
