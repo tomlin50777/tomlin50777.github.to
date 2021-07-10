@@ -62,6 +62,7 @@ function BuildKanBanBox() {
     });
 }
 function Stage_Final(data) {
+    var detailLimit = 8;
     var system = Object.keys(data);
     $('#BoxBaseDiv').append('<div id="Popup_Base_Col"></div>');
     for (var countZ = 0; countZ < system.length; countZ++) {
@@ -74,13 +75,15 @@ function Stage_Final(data) {
             $('#Popup_System_Content_' + countZ).append('<div id="Popup_Subsystem_Block_' + countZ + '_' + countY + '" class="borderSet"></div>');
             $('#Popup_Subsystem_Block_' + countZ + '_' + countY).append('<div id="Popup_Subsystem_Name_' + countZ + '_' + countY + '" data-options="dxItem: {ratio: 1}">' + subsystem[countY] + '</div>');
             $('#Popup_Subsystem_Block_' + countZ + '_' + countY).append('<div id="Popup_Subsystem_Content_' + countZ + '_' + countY + '" data-options="dxItem: {ratio: 9}"></div>');
-            for (var countX = 0; countX < Math.ceil(detail.length / 8); countX++) {
+            for (var countX = 0; countX < Math.ceil(detail.length / detailLimit); countX++) {
                 $('#Popup_Subsystem_Content_' + countZ + '_' + countY).append('<div id="Popup_DetailBlock_' + countZ + '_' + countY + '_' + countX + '"></div>');
-                for (var countW = countX * 8; countW < ((countX + 1) * 8 > detail.length ? detail.length : (countX + 1) * 8); countW++) {
+                for (var countW = countX * detailLimit; countW < ((countX + 1) * detailLimit > detail.length ? detail.length : (countX + 1) * detailLimit); countW++) {
                     $('#Popup_DetailBlock_' + countZ + '_' + countY + '_' + countX).append('<div id="Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" data-options="dxItem: {ratio: 1}"></div>');
-                    $('#Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW).append('<div id="Popup_Detail_Name_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" class="borderSet">' + detail[countX] + '</div>');
+                    $('#Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW).append('<div id="Popup_Detail_Name_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" class="borderSet">' + detail[countW] + '</div>');
                     $('#Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW).append('<div id="Popup_Detail_Value_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" class="borderSet">' + data[system[countZ]][subsystem[countY]][detail[countW]] + '</div>');
                 }
+                if (((countX + 1) * detailLimit > detail.length ? detail.length : (countX + 1) * detailLimit) < detailLimit)
+                    $('#Popup_DetailBlock_' + countZ + '_' + countY + '_' + countX).append('<div id="Popup_Detail_Empty_' + countZ + '_' + countY + '_' + countX + '" data-options="dxItem: {ratio: ' + (detailLimit - ((countX + 1) * detailLimit > detail.length ? detail.length : (countX + 1) * detailLimit)) + '}"></div>');
             }
         }
     }
