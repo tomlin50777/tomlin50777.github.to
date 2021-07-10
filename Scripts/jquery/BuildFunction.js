@@ -109,24 +109,6 @@ function Stage_0_Col(data) {
         var subsystem = Object.keys(data[system[countZ]]);
         $('#Popup_Base_Col').append('<div id="Popup_System_Block_' + countZ + '"></div>');
     }
-    for (var countZ = 0; countZ < system.length; countZ++) {
-        var subsystem = Object.keys(data[system[countZ]]);
-        $("#Popup_System_Block_" + countZ).dxBox({
-            direction: "row",
-            width: "100%"
-        });
-        for (var countY = 0; countY < subsystem.length; countY++) {
-            var detail = Object.keys(data[system[countZ]][subsystem[countY]]);
-            $("#Popup_Subsystem_Block_" + countZ + '_' + countY).dxBox({
-                direction: "row",
-                width: "100%"
-            });
-            $("#Popup_DetailBlock_" + countZ + '_' + countY).dxBox({
-                direction: "row",
-                width: "100%"
-            });
-        }
-    }
 }
 function Stage_0_Row(data) {
     var system = Object.keys(data);
@@ -224,17 +206,6 @@ function Stage_1_Row(data) {
             direction: "row",
             width: "100%"
         });
-        for (var countY = 0; countY < subsystem.length; countY++) {
-            var detail = Object.keys(data[system[countZ]][subsystem[countY]]);
-            $("#Popup_Subsystem_Block_" + countZ + '_' + countY).dxBox({
-                direction: "row",
-                width: "100%"
-            });
-            $("#Popup_DetailBlock_" + countZ + '_' + countY).dxBox({
-                direction: "row",
-                width: "100%"
-            });
-        }
     }
 }
 function Stage_2_Col(data) {
@@ -257,17 +228,6 @@ function Stage_2_Col(data) {
             direction: "row",
             width: "100%"
         });
-        for (var countY = 0; countY < subsystem.length; countY++) {
-            var detail = Object.keys(data[system[countZ]][subsystem[countY]]);
-            $("#Popup_Subsystem_Block_" + countZ + '_' + countY).dxBox({
-                direction: "row",
-                width: "100%"
-            });
-            $("#Popup_DetailBlock_" + countZ + '_' + countY).dxBox({
-                direction: "row",
-                width: "100%"
-            });
-        }
     }
 }
 function Stage_2_Row(data) {
@@ -375,10 +335,6 @@ function Stage_3_Row(data) {
         for (var countY = 0; countY < subsystem.length; countY++) {
             var detail = Object.keys(data[system[countZ]][subsystem[countY]]);
             $("#Popup_Subsystem_Block_" + countZ + '_' + countY).dxBox({
-                direction: "row",
-                width: "100%"
-            });
-            $("#Popup_DetailBlock_" + countZ + '_' + countY).dxBox({
                 direction: "row",
                 width: "100%"
             });
