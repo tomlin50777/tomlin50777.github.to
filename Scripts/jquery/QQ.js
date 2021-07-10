@@ -15,3 +15,6 @@ $(function () {
         }
     });
 });
+$(function () {
+    $('#RR').load('data.html');
+});
