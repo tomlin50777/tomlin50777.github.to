@@ -1,6 +1,4 @@
-$(document).ready(function () {
-    
-});
+
 $(function () {
     $("#menuTabPanel").dxTabPanel({
         dataSource: menuTabPanelItem,
@@ -22,3 +20,12 @@ $(function () {
         repaintChangesOnly: true
     });
 });
+$(document).ready(function () {
+    windowsResize();
+});
+function windowsResize() {
+    var height = $('#LayoutBody').height() - 20;
+    $('#headerSpace').height(height * 0.05);
+    $('#menuTabSpace').height(height * 0.1);
+    $('#contentSpcace').height(height * 0.85);
+}

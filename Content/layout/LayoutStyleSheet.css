@@ -15,10 +15,18 @@ body, html {
 	font-size: 30px;
 	color:#ffffff;
 }
+.fullSize {
+	height:100%;
+}
 #headerSpace {
 	padding-left:15px;
 	padding-right:15px;
 }
 #menuTabSpace {
 	opacity:0.9;
+}
+#Content {
+	height: 100%;
+	background-color: #DDFFDD;
+	opacity: 0.8;
 }
