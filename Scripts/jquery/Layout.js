@@ -1,3 +1,6 @@
+$(document).ready(function () {
+    
+});
 $(function () {
     $("#menuTabPanel").dxTabPanel({
         dataSource: menuTabPanelItem,
