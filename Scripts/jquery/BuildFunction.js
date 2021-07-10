@@ -74,11 +74,14 @@ function Stage_Final(data) {
             $('#Popup_System_Content_' + countZ).append('<div id="Popup_Subsystem_Block_' + countZ + '_' + countY + '" class="borderSet"></div>');
             $('#Popup_Subsystem_Block_' + countZ + '_' + countY).append('<div id="Popup_Subsystem_Name_' + countZ + '_' + countY + '" data-options="dxItem: {ratio: 1}">' + subsystem[countY] + '</div>');
             $('#Popup_Subsystem_Block_' + countZ + '_' + countY).append('<div id="Popup_Subsystem_Content_' + countZ + '_' + countY + '" data-options="dxItem: {ratio: 9}"></div>');
-            $('#Popup_Subsystem_Content_' + countZ + '_' + countY).append('<div id="Popup_DetailBlock_' + countZ + '_' + countY + '"></div>');
-            for (var countX = 0; countX < detail.length; countX++) {
-                $('#Popup_DetailBlock_' + countZ + '_' + countY).append('<div id="Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '" data-options="dxItem: {ratio: 1}"></div>');
-                $('#Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX).append('<div id="Popup_Detail_Name_' + countZ + '_' + countY + '_' + countX + '" class="borderSet">' + detail[countX] + '</div>');
-                $('#Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX).append('<div id="Popup_Detail_Value_' + countZ + '_' + countY + '_' + countX + '" class="borderSet">' + data[system[countZ]][subsystem[countY]][detail[countX]] + '</div>');
+
+            for (var countX = 0; countX < Math.ceil(detail.length / 8); countX++) {
+                $('#Popup_Subsystem_Content_' + countZ + '_' + countY).append('<div id="Popup_DetailBlock_' + countZ + '_' + countY + '_' + countX + '"></div>');
+                for (var countW = countX * 8; countW < ((countX + 1) * 8 > detail.length ? detail.length : (countX + 1) * 8); countW++) {
+                    $('#Popup_DetailBlock_' + countZ + '_' + countY + '_' + countX + '_' + countW).append('<div id="Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" data-options="dxItem: {ratio: 1}"></div>');
+                    $('#Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW).append('<div id="Popup_Detail_Name_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" class="borderSet">' + detail[countX] + '</div>');
+                    $('#Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW).append('<div id="Popup_Detail_Value_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" class="borderSet">' + data[system[countZ]][subsystem[countY]][detail[countW]] + '</div>');
+                }
             }
         }
     }
@@ -395,9 +398,11 @@ function Stage_4_Row(data) {
             $('#Popup_System_Content_' + countZ).append('<div id="Popup_Subsystem_Block_' + countZ + '_' + countY + '"></div>');
             $('#Popup_Subsystem_Block_' + countZ + '_' + countY).append('<div id="Popup_Subsystem_Name_' + countZ + '_' + countY + '" data-options="dxItem: {ratio: 1}">' + subsystem[countY] + '</div>');
             $('#Popup_Subsystem_Block_' + countZ + '_' + countY).append('<div id="Popup_Subsystem_Content_' + countZ + '_' + countY + '" data-options="dxItem: {ratio: 9}"></div>');
-            $('#Popup_Subsystem_Content_' + countZ + '_' + countY).append('<div id="Popup_DetailBlock_' + countZ + '_' + countY + '"></div>');
-            for (var countX = 0; countX < detail.length; countX++) {
-                $('#Popup_DetailBlock_' + countZ + '_' + countY).append('<div id="Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '" data-options="dxItem: {ratio: 1}"></div>');
+            for (var countX = 0; countX < Math.ceil(detail.length / 8); countX++) {
+                $('#Popup_Subsystem_Content_' + countZ + '_' + countY).append('<div id="Popup_DetailBlock_' + countZ + '_' + countY + '_' + countX + '"></div>');
+                for (var countW = countX * 8; countW < ((countX + 1) * 8 > detail.length ? detail.length : (countX + 1) * 8); countW++) {
+                    $('#Popup_DetailBlock_' + countZ + '_' + countY + '_' + countX).append('<div id="Popup_Detail_Content_' + countZ + '_' + countY + '_' + countX + '_' + countW + '" data-options="dxItem: {ratio: 1}"></div>');
+                }
             }
         }
     }
