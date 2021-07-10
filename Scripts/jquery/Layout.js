@@ -30,15 +30,3 @@ function windowsResize() {
     $('#menuTabSpace').height(height * 0.1);
     $('#contentSpcace').height(height * 0.85);
 }
-function BuildKanBanData(){
-    $("#KanBanDataLeftDataScrollView").dxScrollView({
-        scrollByContent: true,
-        scrollByThumb: true,
-        showScrollbar: "onScroll",
-    })
-    $("#KanBanDataRightDataScrollView").dxScrollView({
-        scrollByContent: true,
-        scrollByThumb: true,
-        showScrollbar: "onScroll",
-    })
-}
