@@ -21,7 +21,7 @@ var noteItem = [
     { text: "shipment" }
 ];
 var kanBanItem = [
-    { text: 'Sample Data', url: 'View/KanBan/data.html' },
+    { text: 'Sample Data', url: 'View/KanBan/data.html', bulidFunction: BuildKanBanData },
     { text: 'Box' }
 ];
 var musicItem = [
