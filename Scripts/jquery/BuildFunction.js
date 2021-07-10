@@ -96,10 +96,12 @@ function Stage_Final(data) {
                 direction: "row",
                 width: "100%"
             });
-            $("#Popup_DetailBlock_" + countZ + '_' + countY + '_' + countX).dxBox({
-                direction: "row",
-                width: "100%"
-            });
+            for (var countX = 0; countX < Math.ceil(detail.length / 8); countX++) {
+                $("#Popup_DetailBlock_" + countZ + '_' + countY + '_' + countX).dxBox({
+                    direction: "row",
+                    width: "100%"
+                });
+            }
         }
     }
 }
