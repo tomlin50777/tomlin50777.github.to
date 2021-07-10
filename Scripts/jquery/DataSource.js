@@ -1,4 +1,4 @@
-var menuTabPanelItem = [
+var menuTabItem = [
     { text: "user" },
     { text: "analytics" },
     { text: "customers" },
