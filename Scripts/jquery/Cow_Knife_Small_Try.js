@@ -16,7 +16,7 @@ $(document).ready(function () {
             for (var countX = 0; countX < detail.length; countX++) {
                 $("#DetailBlock" + countZ + '_' + countY).append('<div id="DetailBlockItem' + countZ + '_' + countY + '_' + countX + '" data-options="dxItem: {ratio: 1}"></div>');
                 $("#DetailBlockItem" + countZ + '_' + countY + '_' + countX).append('<div id="DetailBlockItemName' + countZ + '_' + countY + '_' + countX + '" class="borderSer">' + detail[countX] + '</div>');
-                $("#DetailBlockItem" + countZ + '_' + countY + '_' + countX).append('<div id="DetailBlockItemValue' + countZ + '_' + countY + '_' + countX + '" class="borderSer"><nobr class="noHighlight">°¥</nobr>' + kanbandata[system[countZ]][subsystem[countY]][detail[countX]] + '</div>');
+                $("#DetailBlockItem" + countZ + '_' + countY + '_' + countX).append('<div id="DetailBlockItemValue' + countZ + '_' + countY + '_' + countX + '" class="borderSer"><nobr class="noHighlight">‚óè</nobr>' + kanbandata[system[countZ]][subsystem[countY]][detail[countX]] + '</div>');
             }
             $("#DetailBlock" + countZ + '_' + countY).append('<div id="EmptyBlockItem' + countZ + '_' + countY + '" data-options="dxItem: {ratio: ' + (9 - detail.length) + '}"></div>');
         }
