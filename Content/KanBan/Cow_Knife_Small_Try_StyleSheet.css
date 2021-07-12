@@ -1,0 +1,20 @@
+.borderSer {
+	border: 1px;
+	border-style: solid;
+	text-align: center;
+}
+.noHighlight {
+	color: lawngreen;
+}
+.clHighlight {
+	color:yellow;
+}
+.slHighlight {
+	color: red;
+}
+.flashHighlight_Red {
+	color: red;
+}
+.flashHighlight_White {
+	color: #CCCCCC;
+}
