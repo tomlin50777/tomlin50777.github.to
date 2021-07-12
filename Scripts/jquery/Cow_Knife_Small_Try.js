@@ -107,15 +107,15 @@ function ColorJudge(data, idFormat) {
                 for (var countW = 0; countW < data[system[countZ]][subsystem[countY]][detail[countX]].length; countW++) {
                     if (max < data[system[countZ]][subsystem[countY]][detail[countX]][countW].value)
                         max = data[system[countZ]][subsystem[countY]][detail[countX]][countW].value
-                    if (max > flashing) {
-                        $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('flashHighlight_Red');
-                    }
-                    else if (max > sl) {
-                        $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('slHighlight');
-                    }
-                    else if (max > cl) {
-                        $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('clHighlight');
-                    }
+                }
+                if (max > flashing) {
+                    $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('flashHighlight_Red');
+                }
+                else if (max > sl) {
+                    $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('slHighlight');
+                }
+                else if (max > cl) {
+                    $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('clHighlight');
                 }
             }
         }
@@ -133,10 +133,10 @@ function ColorToggle(parameter) {
                 for (var countW = 0; countW < parameter.data[system[countZ]][subsystem[countY]][detail[countX]].length; countW++) {
                     if (max < parameter.data[system[countZ]][subsystem[countY]][detail[countX]][countW].value)
                         max = parameter.data[system[countZ]][subsystem[countY]][detail[countX]][countW].value
-                    if (max > flashing) {
-                        $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_Red');
-                        $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_White');
-                    }
+                }
+                if (max > flashing) {
+                    $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_Red');
+                    $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_White');
                 }
             }
         }
