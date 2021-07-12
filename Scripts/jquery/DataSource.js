@@ -38,116 +38,116 @@ var kanbandata =
 {
     "Power": {
         "Power": {
-            "Tai-Power": 0.0,
-            "Emergency": 0.0,
-            "UPS": 0.0,
-            "Sub-station": 0.0
+            "Tai-Power": [{ name: 'A', value: 0.0 }, { name: 'B', value: 0.0 }, { name: 'C', value: 0.0 }, { name: 'D', value: 0.0 }, { name: 'E', value: 0.0 }, { name: 'F', value: 0.0 }],
+            "Emergency": [{ value: 0.0 }],
+            "UPS": [{ value: 0.0 }],
+            "Sub-station": [{ value: 0.0 }]
         }
     },
     "JiXei": {
         "AMC": {
-            "TS": 0.0,
-            "HCL": 0.0,
-            "NH3": 0.0,
-            "TOC": 0.0
+            "TS": [{ value: 0.0 }],
+            "HCL": [{ value: 0.0 }],
+            "NH3": [{ value: 0.0 }],
+            "TOC": [{ value: 0.0 }]
         },
         "CR": {
-            "Temperature": 0.0,
-            "Humidity": 0.0
+            "Temperature": [{ value: 0.0 }],
+            "Humidity": [{ value: 0.0 }]
         },
         "EXHAUST": {
-            "E-BGR": 0.0,
-            "E-SEX": 0.0
+            "E-BGR": [{ value: 0.0 }],
+            "E-SEX": [{ value: 0.0 }]
         },
         "PV": {
-            "BE-PV": 0.0
+            "BE-PV": [{ value: 0.0 }]
         }
     },
     "PCW": {
         "LOOP3": {
-            "TEMP": 0.0,
-            "Pressure": 0.0
+            "TEMP": [{ value: 0.0 }],
+            "Pressure": [{ value: 0.0 }]
         },
         "LOOP5": {
-            "TEMP": 0.0,
-            "Pressure": 0.0
+            "TEMP": [{ value: 0.0 }],
+            "Pressure": [{ value: 0.0 }]
         }
     },
     "UPW": {
         "LOOP4": {
-            "Particle": 0.0,
-            "Resistivity": 0.0,
-            "SiO2": 0.0,
-            "TOC": 0.0,
-            "DO": 0.0,
-            "TEMP": 0.0,
-            "Pressure": 0.0
+            "Particle": [{ value: 0.0 }],
+            "Resistivity": [{ value: 0.0 }],
+            "SiO2": [{ value: 0.0 }],
+            "TOC": [{ value: 0.0 }],
+            "DO": [{ value: 0.0 }],
+            "TEMP": [{ value: 0.0 }],
+            "Pressure": [{ value: 0.0 }]
         }
     },
     "Bulk gas": {
         "4 %HZ/N2": {
-            "AGCM100": 0.0,
-            "AGCM101": 0.0,
-            "BGCM301": 0.0
+            "AGCM100": [{ value: 0.0 }],
+            "AGCM101": [{ value: 0.0 }],
+            "BGCM301": [{ value: 0.0 }]
         }
     },
     "BGS": {
         "PAR": {
-            "PMS": 0.0,
-            "H2O": 0.0,
-            "O2": 0.0,
-            "CO": 0.0,
-            "CO2": 0.0,
-            "H2": 0.0,
-            "THC": 0.0,
-            "Pressure": 0.0,
-            "N2": 0.0
+            "PMS": [{ value: 0.0 }],
+            "H2O": [{ value: 0.0 }],
+            "O2": [{ value: 0.0 }],
+            "CO": [{ value: 0.0 }],
+            "CO2": [{ value: 0.0 }],
+            "H2": [{ value: 0.0 }],
+            "THC": [{ value: 0.0 }],
+            "Pressure": [{ value: 0.0 }],
+            "N2": [{ value: 0.0 }]
         },
         "PHE": {
-            "PMS": 0.0,
-            "H2O": 0.0,
-            "O2": 0.0,
-            "CO": 0.0,
-            "CO2": 0.0,
-            "H2": 0.0,
-            "THC": 0.0,
-            "Pressure": 0.0,
-            "N2": 0.0
+            "PMS": [{ value: 0.0 }],
+            "H2O": [{ value: 0.0 }],
+            "O2": [{ value: 0.0 }],
+            "CO": [{ value: 0.0 }],
+            "CO2": [{ value: 0.0 }],
+            "H2": [{ value: 0.0 }],
+            "THC": [{ value: 0.0 }],
+            "Pressure": [{ value: 0.0 }],
+            "N2": [{ value: 0.0 }]
         },
         "PN2": {
-            "PMS": 0.0,
-            "H2O": 0.0,
-            "O2": 0.0,
-            "CO": 0.0,
-            "CO2": 0.0,
-            "H2": 0.0,
-            "THC": 0.0,
-            "Pressure": 0.0,
-            "N2": 0.0
+            "PMS": [{ value: 0.0 }],
+            "H2O": [{ value: 0.0 }],
+            "O2": [{ value: 0.0 }],
+            "CO": [{ value: 0.0 }],
+            "CO2": [{ value: 0.0 }],
+            "H2": [{ value: 0.0 }],
+            "THC": [{ value: 0.0 }],
+            "Pressure": [{ value: 0.0 }],
+            "N2": [{ value: 0.0 }]
         },
         "PO2": {
-            "PMS": 0.0,
-            "H2O": 0.0,
-            "AR": 0.0,
-            "CO": 0.0,
-            "CO2": 0.0,
-            "H2": 0.0,
-            "THC": 0.0,
-            "Pressure": 0.0,
-            "N2": 0.0
+            "PMS": [{ value: 0.0 }],
+            "H2O": [{ value: 0.0 }],
+            "AR": [{ value: 0.0 }],
+            "CO": [{ value: 0.0 }],
+            "CO2": [{ value: 0.0 }],
+            "H2": [{ value: 0.0 }],
+            "THC": [{ value: 0.0 }],
+            "Pressure": [{ value: 0.0 }],
+            "N2": [{ value: 0.0 }]
         },
         "XCDA": {
-            "PMS": 0.0,
-            "H2O": 0.0,
-            "NH3": 0.0,
-            "TS": 0.0,
-            "TOC": 0.0
+            "PMS": [{ value: 0.0 }],
+            "H2O": [{ value: 0.0 }],
+            "NH3": [{ value: 0.0 }],
+            "TS": [{ value: 0.0 }],
+            "TOC": [{ value: 0.0 }]
         },
         "CDA": {
-            "PT": 0.0
+            "PT": [{ value: 0.0 }]
         },
         "GNZ": {
-            "PT": 0.0
+            "PT": [{ value: 0.0 }]
         }
     }
 };

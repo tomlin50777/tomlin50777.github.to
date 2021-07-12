@@ -16,7 +16,15 @@ $(document).ready(function () {
             for (var countX = 0; countX < detail.length; countX++) {
                 $("#DetailBlock" + countZ + '_' + countY).append('<div id="DetailBlockItem' + countZ + '_' + countY + '_' + countX + '" data-options="dxItem: {ratio: 1}"></div>');
                 $("#DetailBlockItem" + countZ + '_' + countY + '_' + countX).append('<div id="DetailBlockItemName' + countZ + '_' + countY + '_' + countX + '" class="borderSer">' + detail[countX] + '</div>');
-                $("#DetailBlockItem" + countZ + '_' + countY + '_' + countX).append('<div id="DetailBlockItemValue' + countZ + '_' + countY + '_' + countX + '" class="borderSer"><nobr class="noHighlight">●</nobr>' + kanbandata[system[countZ]][subsystem[countY]][detail[countX]] + '</div>');
+                $("#DetailBlockItem" + countZ + '_' + countY + '_' + countX).append('<div id="DetailBlockItemValue' + countZ + '_' + countY + '_' + countX + '" class="borderSer"><nobr class="noHighlight">●</nobr>' + ((kanbandata[system[countZ]][subsystem[countY]][detail[countX]].length == 1) ? kanbandata[system[countZ]][subsystem[countY]][detail[countX]][0].value : '') + '</div>');
+                if (kanbandata[system[countZ]][subsystem[countY]][detail[countX]].length > 1) {
+                    $("#Base").append('<div id="Popover' + countZ + '_' + countY + '_' + countX + '"></div>');
+                    for (var countW = 0; countW < kanbandata[system[countZ]][subsystem[countY]][detail[countX]].length; countW++)
+                        $("#Popover" + countZ + '_' + countY + '_' + countX).append(kanbandata[system[countZ]][subsystem[countY]][detail[countX]][countW].name + ' : ' + kanbandata[system[countZ]][subsystem[countY]][detail[countX]][countW].value + '<br />');
+                }
+
+
+                
             }
             $("#DetailBlock" + countZ + '_' + countY).append('<div id="EmptyBlockItem' + countZ + '_' + countY + '" data-options="dxItem: {ratio: ' + (9 - detail.length) + '}"></div>');
         }
@@ -41,7 +49,15 @@ $(document).ready(function () {
                     direction: "row",
                     width: "100%"
                 });
-
+                if (kanbandata[system[countZ]][subsystem[countY]][item[countX]].length > 1) {
+                    $("#Popover" + countZ + '_' + countY + '_' + countX).dxPopover({
+                        target: "#DetailBlockItemValue" + countZ + '_' + countY + '_' + countX,
+                        showEvent: "mouseenter",
+                        hideEvent: "mouseleave",
+                        position: "top",
+                        width: 300
+                    });
+                }
             }
 
         }
@@ -68,7 +84,8 @@ function RandomData(data) {
         for (var countY = 0; countY < subsystem.length; countY++) {
             var detail = Object.keys(data[system[countZ]][subsystem[countY]]);
             for (var countX = 0; countX < detail.length; countX++) {
-                data[system[countZ]][subsystem[countY]][detail[countX]] = Math.floor(Math.random() * 10);
+                for (var countW = 0; countW < data[system[countZ]][subsystem[countY]][detail[countX]].length; countW++)
+                    data[system[countZ]][subsystem[countY]][detail[countX]][countW].value = Math.floor(Math.random() * 10);
             }
 
         }
@@ -79,20 +96,26 @@ function ColorJudge(data, idFormat) {
     var flashing = 8;
     var sl = 6;
     var cl = 4;
+    
     var system = Object.keys(data);
     for (var countZ = 0; countZ < system.length; countZ++) {
         var subsystem = Object.keys(data[system[countZ]]);
         for (var countY = 0; countY < subsystem.length; countY++) {
             var detail = Object.keys(data[system[countZ]][subsystem[countY]]);
             for (var countX = 0; countX < detail.length; countX++) {
-                if (data[system[countZ]][subsystem[countY]][detail[countX]] > flashing) {
-                    $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('flashHighlight_Red');
-                }
-                else if (data[system[countZ]][subsystem[countY]][detail[countX]] > sl) {
-                    $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('slHighlight');
-                }
-                else if (data[system[countZ]][subsystem[countY]][detail[countX]] > cl) {
-                    $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('clHighlight');
+                var max = -9999;
+                for (var countW = 0; countW < data[system[countZ]][subsystem[countY]][detail[countX]].length; countW++) {
+                    if (max < data[system[countZ]][subsystem[countY]][detail[countX]][countW].value)
+                        max = data[system[countZ]][subsystem[countY]][detail[countX]][countW].value
+                    if (max > flashing) {
+                        $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('flashHighlight_Red');
+                    }
+                    else if (max > sl) {
+                        $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('slHighlight');
+                    }
+                    else if (max > cl) {
+                        $('#' + idFormat + countZ + '_' + countY + '_' + countX + ' nobr').addClass('clHighlight');
+                    }
                 }
             }
         }
@@ -106,9 +129,14 @@ function ColorToggle(parameter) {
         for (var countY = 0; countY < subsystem.length; countY++) {
             var detail = Object.keys(parameter.data[system[countZ]][subsystem[countY]]);
             for (var countX = 0; countX < detail.length; countX++) {
-                if (parameter.data[system[countZ]][subsystem[countY]][detail[countX]] > flashing) {
-                    $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_Red');
-                    $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_White');
+                var max = -9999;
+                for (var countW = 0; countW < parameter.data[system[countZ]][subsystem[countY]][detail[countX]].length; countW++) {
+                    if (max < parameter.data[system[countZ]][subsystem[countY]][detail[countX]][countW].value)
+                        max = parameter.data[system[countZ]][subsystem[countY]][detail[countX]][countW].value
+                    if (max > flashing) {
+                        $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_Red');
+                        $('#' + parameter.idFormat + countZ + '_' + countY + '_' + countX + ' nobr').toggleClass('flashHighlight_White');
+                    }
                 }
             }
         }
