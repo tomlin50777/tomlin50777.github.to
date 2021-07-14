@@ -1,11 +1,17 @@
 var functionList = [];
+var stepCount = [];
+var nowCount = 0;
 $(function () {
 	setInterval(Run, 500);
 });
 function Run() {
-	for (var count in functionList)
-		functionList[count].function(functionList[count].parameter);
+	nowCount++;
+	for (var count in functionList) {
+		if (nowCount % stepCount[count] == 0)
+			functionList[count].function(functionList[count].parameter);
+	}
 }
-function SetFunction(functionItem) {
+function SetFunction(functionItem, step) {
 	functionList.push(functionItem);
+	stepCount.push(step);
 }

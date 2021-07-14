@@ -38,116 +38,116 @@ var kanbandata =
 {
     "Power": {
         "Power": {
-            "Tai-Power": [{ name: 'A', value: 0.0 }, { name: 'B', value: 0.0 }, { name: 'C', value: 0.0 }, { name: 'D', value: 0.0 }, { name: 'E', value: 0.0 }, { name: 'F', value: 0.0 }],
-            "Emergency": [{ value: 0.0 }],
-            "UPS": [{ value: 0.0 }],
-            "Sub-station": [{ value: 0.0 }]
+            "Tai-Power": [{ name: 'A', value: 0.0, Process_Area: 'ECT_1' }, { name: 'B', value: 0.0, Process_Area: 'ECT_1' }, { name: 'C', value: 0.0, Process_Area: 'ECT_1' }, { name: 'D', value: 0.0, Process_Area: 'ECT_1' }, { name: 'E', value: 0.0, Process_Area: 'ECT_1' }, { name: 'F', value: 0.0, Process_Area: 'ECT_1' }],
+            "Emergency": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "UPS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Sub-station": [{ value: 0.0, Process_Area: 'ECT_1' }]
         }
     },
     "JiXei": {
         "AMC": {
-            "TS": [{ value: 0.0 }],
-            "HCL": [{ value: 0.0 }],
-            "NH3": [{ value: 0.0 }],
-            "TOC": [{ value: 0.0 }]
+            "TS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "HCL": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "NH3": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "TOC": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "CR": {
-            "Temperature": [{ value: 0.0 }],
-            "Humidity": [{ value: 0.0 }]
+            "Temperature": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Humidity": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "EXHAUST": {
-            "E-BGR": [{ value: 0.0 }],
-            "E-SEX": [{ value: 0.0 }]
+            "E-BGR": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "E-SEX": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "PV": {
-            "BE-PV": [{ value: 0.0 }]
+            "BE-PV": [{ value: 0.0, Process_Area: 'ECT_1' }]
         }
     },
     "PCW": {
         "LOOP3": {
-            "TEMP": [{ value: 0.0 }],
-            "Pressure": [{ value: 0.0 }]
+            "TEMP": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Pressure": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "LOOP5": {
-            "TEMP": [{ value: 0.0 }],
-            "Pressure": [{ value: 0.0 }]
+            "TEMP": [{ value: 0.0, Process_Area: 'ECT_2' }],
+            "Pressure": [{ value: 0.0, Process_Area: 'ECT_1' }]
         }
     },
     "UPW": {
         "LOOP4": {
-            "Particle": [{ value: 0.0 }],
-            "Resistivity": [{ value: 0.0 }],
-            "SiO2": [{ value: 0.0 }],
-            "TOC": [{ value: 0.0 }],
-            "DO": [{ value: 0.0 }],
-            "TEMP": [{ value: 0.0 }],
-            "Pressure": [{ value: 0.0 }]
+            "Particle": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Resistivity": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "SiO2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "TOC": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "DO": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "TEMP": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Pressure": [{ value: 0.0, Process_Area: 'ECT_1' }]
         }
     },
     "Bulk gas": {
         "4 %HZ/N2": {
-            "AGCM100": [{ value: 0.0 }],
-            "AGCM101": [{ value: 0.0 }],
-            "BGCM301": [{ value: 0.0 }]
+            "AGCM100": [{ value: 0.0, Process_Area: 'ECT_2' }],
+            "AGCM101": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "BGCM301": [{ value: 0.0, Process_Area: 'ECT_1' }]
         }
     },
     "BGS": {
         "PAR": {
-            "PMS": [{ value: 0.0 }],
-            "H2O": [{ value: 0.0 }],
-            "O2": [{ value: 0.0 }],
-            "CO": [{ value: 0.0 }],
-            "CO2": [{ value: 0.0 }],
-            "H2": [{ value: 0.0 }],
-            "THC": [{ value: 0.0 }],
-            "Pressure": [{ value: 0.0 }],
-            "N2": [{ value: 0.0 }]
+            "PMS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2O": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "O2": [{ value: 0.0, Process_Area: 'ECT_3' }],
+            "CO": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "CO2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "THC": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Pressure": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "N2": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "PHE": {
-            "PMS": [{ value: 0.0 }],
-            "H2O": [{ value: 0.0 }],
-            "O2": [{ value: 0.0 }],
-            "CO": [{ value: 0.0 }],
-            "CO2": [{ value: 0.0 }],
-            "H2": [{ value: 0.0 }],
-            "THC": [{ value: 0.0 }],
-            "Pressure": [{ value: 0.0 }],
-            "N2": [{ value: 0.0 }]
+            "PMS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2O": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "O2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "CO": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "CO2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "THC": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Pressure": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "N2": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "PN2": {
-            "PMS": [{ value: 0.0 }],
-            "H2O": [{ value: 0.0 }],
-            "O2": [{ value: 0.0 }],
-            "CO": [{ value: 0.0 }],
-            "CO2": [{ value: 0.0 }],
-            "H2": [{ value: 0.0 }],
-            "THC": [{ value: 0.0 }],
-            "Pressure": [{ value: 0.0 }],
-            "N2": [{ value: 0.0 }]
+            "PMS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2O": [{ value: 0.0, Process_Area: 'ECT_3' }],
+            "O2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "CO": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "CO2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "THC": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Pressure": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "N2": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "PO2": {
-            "PMS": [{ value: 0.0 }],
-            "H2O": [{ value: 0.0 }],
-            "AR": [{ value: 0.0 }],
-            "CO": [{ value: 0.0 }],
-            "CO2": [{ value: 0.0 }],
-            "H2": [{ value: 0.0 }],
-            "THC": [{ value: 0.0 }],
-            "Pressure": [{ value: 0.0 }],
-            "N2": [{ value: 0.0 }]
+            "PMS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2O": [{ value: 0.0, Process_Area: 'ECT_2' }],
+            "AR": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "CO": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "CO2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "THC": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "Pressure": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "N2": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "XCDA": {
-            "PMS": [{ value: 0.0 }],
-            "H2O": [{ value: 0.0 }],
-            "NH3": [{ value: 0.0 }],
-            "TS": [{ value: 0.0 }],
-            "TOC": [{ value: 0.0 }]
+            "PMS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "H2O": [{ value: 0.0, Process_Area: 'ECT_3' }],
+            "NH3": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "TS": [{ value: 0.0, Process_Area: 'ECT_1' }],
+            "TOC": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "CDA": {
-            "PT": [{ value: 0.0 }]
+            "PT": [{ value: 0.0, Process_Area: 'ECT_1' }]
         },
         "GNZ": {
-            "PT": [{ value: 0.0 }]
+            "PT": [{ value: 0.0, Process_Area: 'ECT_1' }]
         }
     }
 };
