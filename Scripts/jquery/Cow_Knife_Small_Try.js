@@ -198,3 +198,29 @@ $(function () {
         }
     });
 });
+
+
+$(function () {
+    $("#templateButton").dxButton({
+        stylingMode: "contained",
+        icon: "isnotblank",
+        type: "normal",
+        width: 120,
+        template: function (e) {
+            return '<p>A</p><p>B</p><p>C</p><p>D</p>';
+            
+        },
+        onClick: function () {
+            DevExpress.ui.notify("The Contained button was clicked");
+        }
+    });
+    $("#QQTest").dxPopover({
+        target: "#templateButton",
+        showEvent: "mouseenter",
+        hideEvent: "mouseleave",
+        position: "top",
+        width: 300
+    });
+
+
+}); 
